@@ -36,7 +36,7 @@ export function getRegionsInsideRange(regions: AspRegion[], range: Range): Range
 
 export function getAspRegions(doc: TextDocument): AspRegion[] {
 		// If we're not in an ASP context, no need to decorate
-		if (doc.languageId != "asp") {
+		if (doc.languageId != "asp" && doc.languageId != "asp-js") {
 			return;
 		}
 
@@ -102,5 +102,6 @@ export function positionIsInsideAspRegion(doc: TextDocument, position: Position)
   }
 
   return { isInsideRegion: false, regions: regions};
+
 
 }

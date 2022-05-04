@@ -1,0 +1,52 @@
+{
+  "information_for_contributors": [
+    "This file has been converted from https://github.com/textmate/asp.tmbundle"
+  ],
+  "name": "ASP-JS-HTML",
+  "scopeName": "text.html.asp.js",
+  "comment": "Classic ASP (JScript) with HTML",
+  "fileTypes": [
+    "asp",
+    "asa",
+    "inc"
+  ],
+  "injections": {
+    "text.html.asp.js": {
+      "patterns": [
+        {
+          "patterns": [
+            {
+              "begin": "\\s*<%=?",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.embedded.begin.asp.js"
+                }
+              },
+              "contentName": "source.js",
+              "end": "%>",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.embedded.end.asp.js"
+                },
+                "1": {
+                  "name": "source.js"
+                }
+              },
+              "name": "meta.embedded.block.asp.js",
+              "patterns": [
+                {
+                  "include": "source.js"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "patterns": [
+    {
+      "include": "text.html.basic"
+    }
+  ]
+}
